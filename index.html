@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>شاعران و اشعار</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+  <header class="topbar">
+    <h1>شاعران و اشعار</h1>
+    <input id="search" type="search" placeholder="جستجو در نام شاعر یا متن شعر…" aria-label="جستجو" />
+  </header>
+
+  <main id="view">
+    <!-- فهرست شاعران -->
+    <section id="poetsView" class="panel active" aria-label="شاعران">
+      <div class="list" id="poetsList"></div>
+      <button id="addPoetBtn" class="primary">+ افزودن شاعر</button>
+    </section>
+
+    <!-- فهرست اشعار -->
+    <section id="lyricsView" class="panel" aria-label="اشعار">
+      <button id="backToPoets" class="back">← شاعران</button>
+      <h2 id="poetTitle"></h2>
+      <div class="list" id="lyricsList"></div>
+      <button id="addLyricBtn" class="primary">+ افزودن شعر</button>
+    </section>
+
+    <!-- متن شعر -->
+    <section id="lyricDetailView" class="panel" aria-label="متن شعر">
+      <button id="backToLyrics" class="back">← اشعار</button>
+      <h2 id="lyricTitle"></h2>
+      <pre id="lyricBody" class="lyric"></pre>
+      <div class="actions">
+        <button id="editLyricBtn">ویرایش</button>
+        <button id="deleteLyricBtn" class="danger">حذف</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modal">
+    <form method="dialog" id="modalForm">
+      <h3 id="modalTitle">افزودن</h3>
+      <div id="modalFields"></div>
+      <menu>
+        <button value="cancel">انصراف</button>
+        <button id="modalSaveBtn" value="default">ذخیره</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

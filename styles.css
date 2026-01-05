@@ -1,0 +1,39 @@
+:root {
+  --bg:#0f1216; --card:#171a20; --text:#fff; --muted:#b6b6b6;
+  --accent:#4fb477; --danger:#e05d5d; --border:#2a2e36;
+}
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; height:100%; background:var(--bg); color:var(--text); }
+
+/* Persian-friendly font stack */
+body {
+  font-family: system-ui, -apple-system, "SF Pro Text", "Noto Naskh Arabic", "Noto Sans Arabic", "IranSans", sans-serif;
+}
+
+.topbar { position:sticky; top:0; z-index:10; background:var(--bg);
+  padding:12px; border-bottom:1px solid var(--border); display:flex; gap:8px; align-items:center; }
+.topbar h1 { margin:0; font-size:18px; flex:0 0 auto; }
+.topbar input[type="search"] { flex:1; padding:10px; border-radius:10px; border:1px solid var(--border);
+  background:var(--card); color:var(--text); direction: rtl; text-align: right; }
+
+.panel { display:none; padding:12px; }
+.panel.active { display:block; }
+
+.list { display:flex; flex-direction:column; gap:8px; margin-bottom:12px; }
+.item { background:var(--card); border:1px solid var(--border); padding:12px; border-radius:12px; cursor:pointer; }
+.item small { color:var(--muted); }
+
+.primary { width:100%; padding:12px; border-radius:12px; border:0; background:var(--accent); color:#041a0f; font-weight:600; }
+.back { margin-bottom:8px; background:none; border:0; color:var(--muted); font-size:14px; }
+.back::before { content: '→ '; } /* RTL back indicator */
+
+.lyric { white-space:pre-wrap; background:var(--card); padding:12px; border-radius:12px; border:1px solid var(--border); }
+.actions { display:flex; gap:8px; margin-top:12px; }
+.actions button { flex:1; padding:10px; border-radius:12px; border:1px solid var(--border); background:var(--card); color:var(--text); }
+.actions .danger { background:var(--danger); border-color:transparent; color:#290d0d; }
+
+dialog { border:none; border-radius:12px; padding:0; }
+dialog form { padding:16px; min-width:280px; background:var(--card); color:var(--text); }
+dialog input, dialog textarea { width:100%; padding:10px; border-radius:10px; border:1px solid var(--border); background:var(--bg); color:var(--text); direction: rtl; text-align: right; }
+menu { display:flex; gap:8px; justify-content:flex-end; padding:0; margin-top:12px; }
+button { cursor:pointer; }
